@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { Send, Loader2, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import StarBorder from "@/components/ui/star-border";
 
 export function ContactSection() {
     const [isSubmitting, setIsSubmitting] = useState(false);
@@ -53,7 +54,7 @@ export function ContactSection() {
     return (
         <section
             id="contact"
-            className="relative bg-neutral-950 py-8 md:py-16 overflow-hidden"
+            className="relative bg-neutral-950 py-8 md:py-16 overflow-hidden scroll-mt-24"
         >
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-900/30 to-neutral-950" />
@@ -138,106 +139,86 @@ export function ContactSection() {
                     viewport={{ once: true, margin: "-50px" }}
                     transition={{ duration: 0.6, delay: 0.2 }}
                 >
-                    <form
-                        onSubmit={handleSubmit}
-                        className="rounded-xl sm:rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-6 md:p-10 backdrop-blur-sm mx-2 sm:mx-0"
-                    >
-                        <div className="grid gap-6 md:grid-cols-2">
-                            {/* Name */}
-                            <div className="space-y-2">
-                                <label
-                                    htmlFor="name"
-                                    className="text-sm font-medium text-neutral-300"
-                                >
-                                    Full Name
-                                </label>
-                                <Input
-                                    id="name"
-                                    name="name"
-                                    type="text"
-                                    placeholder="Your Name"
-                                    required
-                                    className="h-10 sm:h-12 bg-white/5 border-white/10 text-white placeholder:text-neutral-500 focus:border-cyan-500/50 focus:ring-cyan-500/20 text-sm sm:text-base"
-                                />
+                    <StarBorder as="div" className="w-full p-1" color="cyan" speed="4s">
+                        <form onSubmit={handleSubmit} className="space-y-6 relative z-10 p-6 md:p-10">
+                            <div className="grid gap-6 md:grid-cols-2">
+                                {/* Name */}
+
+                                <div className="group space-y-2">
+                                    <label htmlFor="name" className="text-sm font-medium text-neutral-400 group-focus-within:text-cyan-400 transition-colors duration-300">Full Name</label>
+                                    <Input
+                                        id="name"
+                                        name="name"
+                                        type="text"
+                                        placeholder="John Doe"
+                                        required
+                                        className="h-12 bg-white/5 border-white/10 text-white placeholder:text-neutral-600 focus:border-cyan-500/50 focus:ring-cyan-500/20 transition-all rounded-xl"
+                                    />
+                                </div>
+
+                                {/* Email */}
+                                <div className="group space-y-2">
+                                    <label htmlFor="email" className="text-sm font-medium text-neutral-400 group-focus-within:text-purple-400 transition-colors duration-300">Email Address</label>
+                                    <Input
+                                        id="email"
+                                        name="email"
+                                        type="email"
+                                        placeholder="john@example.com"
+                                        required
+                                        className="h-12 bg-white/5 border-white/10 text-white placeholder:text-neutral-600 focus:border-purple-500/50 focus:ring-purple-500/20 transition-all rounded-xl"
+                                    />
+                                </div>
                             </div>
 
-                            {/* Email */}
-                            <div className="space-y-2">
-                                <label
-                                    htmlFor="email"
-                                    className="text-sm font-medium text-neutral-300"
-                                >
-                                    Email
-                                </label>
-                                <Input
-                                    id="email"
-                                    name="email"
-                                    type="email"
-                                    placeholder="your.email@example.com"
-                                    required
-                                    className="h-10 sm:h-12 bg-white/5 border-white/10 text-white placeholder:text-neutral-500 focus:border-cyan-500/50 focus:ring-cyan-500/20 text-sm sm:text-base"
-                                />
-                            </div>
-
-                            {/* Project Idea */}
-                            <div className="space-y-2 md:col-span-2">
-                                <label
-                                    htmlFor="project"
-                                    className="text-sm font-medium text-neutral-300"
-                                >
-                                    Project Idea
-                                </label>
+                            {/* Project */}
+                            <div className="group space-y-2">
+                                <label htmlFor="project" className="text-sm font-medium text-neutral-400 group-focus-within:text-cyan-400 transition-colors duration-300">Project Idea</label>
                                 <Input
                                     id="project"
                                     name="project"
                                     type="text"
-                                    placeholder="e.g., AI-based attendance system"
+                                    placeholder="What are you building?"
                                     required
-                                    className="h-10 sm:h-12 bg-white/5 border-white/10 text-white placeholder:text-neutral-500 focus:border-cyan-500/50 focus:ring-cyan-500/20 text-sm sm:text-base"
+                                    className="h-12 bg-white/5 border-white/10 text-white placeholder:text-neutral-600 focus:border-cyan-500/50 focus:ring-cyan-500/20 transition-all rounded-xl"
                                 />
                             </div>
 
                             {/* Message */}
-                            <div className="space-y-2 md:col-span-2">
-                                <label
-                                    htmlFor="message"
-                                    className="text-sm font-medium text-neutral-300"
-                                >
-                                    Message
-                                </label>
+                            <div className="group space-y-2">
+                                <label htmlFor="message" className="text-sm font-medium text-neutral-400 group-focus-within:text-purple-400 transition-colors duration-300">Message</label>
                                 <textarea
                                     id="message"
                                     name="message"
                                     rows={4}
-                                    placeholder="Tell us more about your project requirements..."
-                                    className="flex min-h-[100px] sm:min-h-[120px] w-full rounded-md border border-white/10 bg-white/5 px-3 py-2 sm:py-3 text-sm sm:text-base text-white ring-offset-background placeholder:text-neutral-500 focus:outline-none focus:border-cyan-500/50 focus:ring-2 focus:ring-cyan-500/20 disabled:cursor-not-allowed disabled:opacity-50 resize-none"
+                                    placeholder="Tell us about your requirements..."
+                                    className="w-full rounded-xl border border-white/10 bg-white/5 p-4 text-white placeholder:text-neutral-600 focus:border-purple-500/50 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all resize-none min-h-[140px]"
                                 />
                             </div>
-                        </div>
 
-                        {/* Submit Button */}
-                        <Button
-                            type="submit"
-                            disabled={isSubmitting || isSubmitted}
-                            className="mt-4 sm:mt-6 w-full h-11 sm:h-14 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold text-base sm:text-lg shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300 disabled:opacity-70"
-                        >
-                            {isSubmitting ? (
-                                <>
-                                    <Loader2 className="mr-2 h-5 w-5 animate-spin" />
-                                    Sending...
-                                </>
-                            ) : isSubmitted ? (
-                                <>
-                                    <span className="text-green-300">✓ Request Submitted!</span>
-                                </>
-                            ) : (
-                                <>
-                                    Submit Request
-                                    <Send className="ml-2 h-5 w-5" />
-                                </>
-                            )}
-                        </Button>
-                    </form>
+                            {/* Submit Button */}
+                            <Button
+                                type="submit"
+                                disabled={isSubmitting || isSubmitted}
+                                className="w-full h-14 bg-gradient-to-r from-cyan-600 to-purple-600 hover:from-cyan-500 hover:to-purple-500 text-white font-bold text-lg rounded-xl shadow-lg shadow-purple-500/25 transition-all duration-300 transform hover:scale-[1.02] disabled:hover:scale-100 disabled:opacity-70 mt-4"
+                            >
+                                {isSubmitting ? (
+                                    <span className="flex items-center gap-2">
+                                        <Loader2 className="h-5 w-5 animate-spin" />
+                                        Sending...
+                                    </span>
+                                ) : isSubmitted ? (
+                                    <span className="flex items-center gap-2 text-green-300">
+                                        <span className="bg-green-500/20 text-green-300 p-1 rounded-full">✓</span>
+                                        Submitted Successfully
+                                    </span>
+                                ) : (
+                                    <span className="flex items-center gap-2">
+                                        Send Inquiry <Send className="h-5 w-5" />
+                                    </span>
+                                )}
+                            </Button>
+                        </form>
+                    </StarBorder>
                 </motion.div>
             </div>
         </section>

@@ -5,6 +5,8 @@ import { ArrowRight, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { motion } from "framer-motion";
+import DecryptedText from "@/components/ui/decrypted-text";
+import GradientText from "@/components/ui/gradient-text";
 
 export function HeroSection() {
     const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -16,7 +18,7 @@ export function HeroSection() {
     };
 
     return (
-        <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950">
+        <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950">
             {/* Background Effects */}
             <div className="absolute inset-0 bg-gradient-to-br from-neutral-950 via-neutral-900 to-neutral-950" />
             <BackgroundBeams className="opacity-70" />
@@ -41,20 +43,45 @@ export function HeroSection() {
                         <span className="text-sm text-neutral-400">Now accepting projects for 2026</span>
                     </div>
 
+
+
                     {/* Main Headline */}
                     <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl lg:text-9xl">
-                        <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
-                            TYSK
-                        </span>
+                        <GradientText
+                            colors={["#5227FF", "#FF9FFC", "#B19EEF", "#5227FF"]} // Added loop color for smoothness
+                            animationSpeed={8}
+                            showBorder={false}
+                        >
+                            <DecryptedText
+                                text="TYSK"
+                                animateOn="view"
+                                revealDirection="start"
+                                sequential={true}
+                                speed={100}
+                                maxIterations={20}
+                                characters="ABCD1234!?"
+                                className="text-transparent"
+                                parentClassName=""
+                                encryptedClassName="text-transparent"
+                            />
+                        </GradientText>
                     </h1>
 
                     {/* Subheadline */}
-                    <p className="mb-4 text-base font-light text-neutral-400 sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto">
-                        <span className="text-white font-medium">T</span>echnical{" "}
-                        <span className="text-white font-medium">Y</span>ear{" "}
-                        <span className="text-white font-medium">S</span>trategies &{" "}
-                        <span className="text-white font-medium">K</span>nowledge
-                    </p>
+                    <div className="mb-4 text-base font-light text-neutral-400 sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto">
+                        <DecryptedText
+                            text="Technical Year Strategies & Knowledge"
+                            animateOn="view"
+                            revealDirection="start"
+                            sequential={true}
+                            speed={50}
+                            maxIterations={15}
+                            characters="ABCD1234!?"
+                            className="text-neutral-400 font-medium"
+                            parentClassName="inline-block"
+                            encryptedClassName="text-neutral-600"
+                        />
+                    </div>
 
                     <p className="mb-10 text-base font-medium text-neutral-300 sm:text-lg md:text-xl lg:text-2xl">
                         Defined by{" "}

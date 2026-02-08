@@ -5,6 +5,7 @@ import { WhyChooseSection } from "@/components/why-choose-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
 import { VortexBackground } from "@/components/vortex-background";
+import { ScrollToTop } from "@/components/scroll-to-top";
 
 export default function Home() {
   return (
@@ -19,6 +20,7 @@ export default function Home() {
         <ContactSection />
       </VortexBackground>
 
+      <ScrollToTop />
       <Footer />
     </main>
   );

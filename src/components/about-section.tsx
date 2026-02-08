@@ -54,7 +54,8 @@ export function AboutSection() {
     return (
         <section
             id="about"
-            className="relative py-16 md:py-32 overflow-hidden"
+            // Adjust the scroll position by changing scroll-mt-28 (larger number = lower scroll position)
+            className="relative py-16 md:py-32 overflow-hidden scroll-mt-16"
         >
             <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
                 {/* Section Header */}
@@ -90,7 +91,7 @@ export function AboutSection() {
                 >
                     {features.map((feature) => (
                         <motion.div key={feature.title} variants={itemVariants}>
-                            <BackgroundGradient className="rounded-lg sm:rounded-[22px] p-4 sm:p-6 md:p-8 bg-neutral-900 h-full">
+                            <BackgroundGradient className="rounded-3xl p-4 sm:p-6 md:p-8 bg-neutral-900 h-full">
                                 {/* Icon */}
                                 <div
                                     className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.gradient} shadow-lg`}

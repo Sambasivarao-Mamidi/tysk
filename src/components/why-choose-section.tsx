@@ -75,7 +75,7 @@ export function WhyChooseSection() {
     return (
         <section
             id="services"
-            className="relative bg-neutral-950 py-20 md:py-28 overflow-hidden"
+            className="relative bg-neutral-950 py-20 md:py-28 overflow-hidden scroll-mt-20"
         >
             {/* Background */}
             <div className="absolute inset-0 bg-gradient-to-b from-neutral-950 via-neutral-900/50 to-neutral-950" />
