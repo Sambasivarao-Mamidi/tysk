@@ -11,7 +11,7 @@ export function VortexBackground({ children }: VortexBackgroundProps) {
         <div className="relative w-full">
             <Vortex
                 backgroundColor="transparent"
-                particleCount={500}
+                particleCount={200}
                 baseHue={200}
                 rangeY={800}
                 baseSpeed={0.0}

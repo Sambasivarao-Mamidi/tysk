@@ -14,7 +14,7 @@ export const BackgroundBeams = React.memo(
 
     useEffect(() => {
       if (!mounted) return;
-      
+
       const canvas = canvasRef.current;
       if (!canvas) return;
 
@@ -71,10 +71,10 @@ export const BackgroundBeams = React.memo(
         }
       }
 
-      // Create particles - fewer on mobile for performance
+      // Create particles - fewer for better performance
       const isMobile = window.innerWidth < 768;
-      const particleCount = isMobile ? 30 : 60;
-      
+      const particleCount = isMobile ? 20 : 40;
+
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle());
       }
@@ -92,18 +92,13 @@ export const BackgroundBeams = React.memo(
             const maxDistance = isMobile ? 100 : 150;
 
             if (distance < maxDistance) {
+              const opacity = 0.3 * (1 - distance / maxDistance);
               ctx.beginPath();
               ctx.moveTo(particles[i].x, particles[i].y);
               ctx.lineTo(particles[j].x, particles[j].y);
-              const gradient = ctx.createLinearGradient(
-                particles[i].x,
-                particles[i].y,
-                particles[j].x,
-                particles[j].y
-              );
-              gradient.addColorStop(0, `rgba(0, 217, 255, ${0.3 * (1 - distance / maxDistance)})`);
-              gradient.addColorStop(1, `rgba(139, 92, 246, ${0.3 * (1 - distance / maxDistance)})`);
-              ctx.strokeStyle = gradient;
+              // Optimizing: Use solid color instead of gradient per line
+              const color = (i + j) % 2 === 0 ? `rgba(0, 217, 255, ${opacity})` : `rgba(139, 92, 246, ${opacity})`;
+              ctx.strokeStyle = color;
               ctx.lineWidth = 0.5;
               ctx.stroke();
             }

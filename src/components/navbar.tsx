@@ -4,19 +4,43 @@ import * as React from "react";
 import Link from "next/link";
 import { Menu, X, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import {
-    Sheet,
-    SheetContent,
-    SheetTrigger,
-    SheetClose,
-    SheetTitle,
-} from "@/components/ui/sheet";
+import { CardNav } from "@/components/ui/card-nav";
 import { cn } from "@/lib/utils";
 
 const navItems = [
     { name: "About", href: "#about" },
     { name: "Services", href: "#services" },
     { name: "Contact", href: "#contact" },
+];
+
+const cardNavItems = [
+    {
+        label: "About",
+        bgColor: "#0D0716",
+        textColor: "#fff",
+        links: [
+            { label: "Company", href: "#about" },
+            { label: "Our Story", href: "#about" }
+        ]
+    },
+    {
+        label: "Services",
+        bgColor: "#170D27",
+        textColor: "#fff",
+        links: [
+            { label: "Technologies", href: "#services" },
+            { label: "Consulting", href: "#services" }
+        ]
+    },
+    {
+        label: "Contact",
+        bgColor: "#271E37",
+        textColor: "#fff",
+        links: [
+            { label: "Get in Touch", href: "#contact" },
+            { label: "Email", href: "mailto:contact@tysk.com" }
+        ]
+    }
 ];
 
 export function Navbar() {
@@ -86,61 +110,19 @@ export function Navbar() {
                 </div>
 
                 {/* Mobile Navigation */}
-                <Sheet>
-                    <SheetTrigger asChild className="md:hidden">
-                        <Button
-                            variant="ghost"
-                            size="icon"
-                            className="text-white hover:bg-white/10 min-h-[44px] min-w-[44px]"
+                <CardNav
+                    items={cardNavItems}
+                    logo={
+                        <Link
+                            href="/"
+                            className="flex items-center gap-2 text-2xl font-bold tracking-tight"
                         >
-                            <Menu className="h-6 w-6" />
-                            <span className="sr-only">Open menu</span>
-                        </Button>
-                    </SheetTrigger>
-                    <SheetContent
-                        side="right"
-                        className="w-[320px] sm:w-[350px] bg-neutral-950/95 backdrop-blur-xl border-l border-white/10 p-0"
-                    >
-                        <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                        <div className="flex flex-col gap-6 p-6 pt-8 h-full">
-                            <div className="flex items-center justify-between">
-                                <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                                    TYSK
-                                </span>
-                            </div>
-
-                            <div className="flex flex-col gap-0 pt-6">
-                                {navItems.map((item) => (
-                                    <SheetClose asChild key={item.name}>
-                                        <Link
-                                            href={item.href}
-                                            onClick={(e) => handleNavClick(e, item.href)}
-                                            className="text-base font-medium text-neutral-300 hover:text-white transition-colors px-0 py-4 border-b border-white/10"
-                                        >
-                                            {item.name}
-                                        </Link>
-                                    </SheetClose>
-                                ))}
-                            </div>
-
-                            <SheetClose asChild>
-                                <Button
-                                    asChild
-                                    className="mt-6 w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold min-h-[48px] text-base"
-                                >
-                                    <Link
-                                        href="#contact"
-                                        onClick={(e) => handleNavClick(e, "#contact")}
-                                        className="flex items-center justify-center gap-2"
-                                    >
-                                        <Rocket className="h-4 w-4" />
-                                        Book Consultation
-                                    </Link>
-                                </Button>
-                            </SheetClose>
-                        </div>
-                    </SheetContent>
-                </Sheet>
+                            <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
+                                TYSK
+                            </span>
+                        </Link>
+                    }
+                />
             </nav>
         </header>
     );

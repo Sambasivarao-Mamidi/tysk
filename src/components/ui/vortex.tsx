@@ -107,7 +107,7 @@ export const Vortex = (props: VortexProps) => {
         ctx.fillRect(0, 0, canvas.width, canvas.height);
 
         drawParticles(ctx);
-        renderGlow(canvas, ctx);
+        // renderGlow(canvas, ctx);
         renderToScreen(canvas, ctx);
 
         requestAnimationFrame(() => draw(canvas, ctx));
