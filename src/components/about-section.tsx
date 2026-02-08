@@ -54,7 +54,7 @@ export function AboutSection() {
     return (
         <section
             id="about"
-            className="relative py-20 md:py-32 overflow-hidden"
+            className="relative py-16 md:py-32 overflow-hidden"
         >
             <div className="relative z-10 mx-auto max-w-7xl px-4 md:px-8">
                 {/* Section Header */}
@@ -68,13 +68,13 @@ export function AboutSection() {
                     <p className="mb-4 text-sm font-medium uppercase tracking-widest text-cyan-400">
                         About Us
                     </p>
-                    <h2 className="text-3xl font-bold text-white md:text-5xl mb-4">
+                    <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl mb-4">
                         Your Final Year Project,{" "}
                         <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                             Perfected
                         </span>
                     </h2>
-                    <p className="max-w-2xl mx-auto text-neutral-400 text-lg">
+                    <p className="max-w-2xl mx-auto text-neutral-400 text-base sm:text-lg px-2">
                         We provide end-to-end consultancy for BTech/MTech final year projects,
                         ensuring you deliver excellence.
                     </p>
@@ -90,7 +90,7 @@ export function AboutSection() {
                 >
                     {features.map((feature) => (
                         <motion.div key={feature.title} variants={itemVariants}>
-                            <BackgroundGradient className="rounded-[22px] p-6 md:p-8 bg-neutral-900 h-full">
+                            <BackgroundGradient className="rounded-lg sm:rounded-[22px] p-4 sm:p-6 md:p-8 bg-neutral-900 h-full">
                                 {/* Icon */}
                                 <div
                                     className={`mb-6 inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-gradient-to-br ${feature.gradient} shadow-lg`}
@@ -99,11 +99,11 @@ export function AboutSection() {
                                 </div>
 
                                 {/* Content */}
-                                <h3 className="mb-3 text-xl font-semibold text-white md:text-2xl flex items-center gap-2 group">
+                                <h3 className="mb-3 text-lg sm:text-xl font-semibold text-white md:text-2xl flex items-center gap-2 group">
                                     {feature.title}
                                     <ArrowUpRight className="h-5 w-5 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300 text-neutral-400" />
                                 </h3>
-                                <p className="text-neutral-400 leading-relaxed">
+                                <p className="text-neutral-400 leading-relaxed text-sm sm:text-base">
                                     {feature.description}
                                 </p>
                             </BackgroundGradient>

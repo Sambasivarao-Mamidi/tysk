@@ -7,6 +7,14 @@ import { BackgroundBeams } from "@/components/ui/background-beams";
 import { motion } from "framer-motion";
 
 export function HeroSection() {
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-neutral-950">
             {/* Background Effects */}
@@ -34,21 +42,21 @@ export function HeroSection() {
                     </div>
 
                     {/* Main Headline */}
-                    <h1 className="mb-4 text-6xl font-bold tracking-tight md:text-8xl lg:text-9xl">
+                    <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl lg:text-9xl">
                         <span className="bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 bg-clip-text text-transparent drop-shadow-2xl">
                             TYSK
                         </span>
                     </h1>
 
                     {/* Subheadline */}
-                    <p className="mb-4 text-lg font-light text-neutral-400 md:text-xl lg:text-2xl max-w-3xl mx-auto">
+                    <p className="mb-4 text-base font-light text-neutral-400 sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto">
                         <span className="text-white font-medium">T</span>echnical{" "}
                         <span className="text-white font-medium">Y</span>ear{" "}
                         <span className="text-white font-medium">S</span>trategies &{" "}
                         <span className="text-white font-medium">K</span>nowledge
                     </p>
 
-                    <p className="mb-10 text-xl font-medium text-neutral-300 md:text-2xl">
+                    <p className="mb-10 text-base font-medium text-neutral-300 sm:text-lg md:text-xl lg:text-2xl">
                         Defined by{" "}
                         <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
                             Execution
@@ -57,13 +65,17 @@ export function HeroSection() {
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col gap-4 sm:flex-row sm:justify-center sm:gap-6">
+                    <div className="flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
                         <Button
                             asChild
                             size="lg"
-                            className="relative overflow-hidden bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-lg shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 transition-all duration-300 min-h-[52px] px-8 group"
+                            className="relative overflow-hidden bg-gradient-to-r from-cyan-500 to-purple-600 text-white font-semibold text-base sm:text-lg shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/50 transition-all duration-300 min-h-[48px] sm:min-h-[52px] px-6 sm:px-8 group"
                         >
-                            <Link href="#contact" className="flex items-center gap-2">
+                            <Link
+                                href="#contact"
+                                onClick={(e) => handleNavClick(e, "#contact")}
+                                className="flex items-center gap-2"
+                            >
                                 Start Project
                                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                                 {/* Glow effect */}
@@ -75,9 +87,13 @@ export function HeroSection() {
                             asChild
                             size="lg"
                             variant="outline"
-                            className="border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-lg backdrop-blur-sm min-h-[52px] px-8"
+                            className="border-white/20 bg-white/5 hover:bg-white/10 text-white font-semibold text-base sm:text-lg backdrop-blur-sm min-h-[48px] sm:min-h-[52px] px-6 sm:px-8"
                         >
-                            <Link href="#about" className="flex items-center gap-2">
+                            <Link
+                                href="#about"
+                                onClick={(e) => handleNavClick(e, "#about")}
+                                className="flex items-center gap-2"
+                            >
                                 View Roadmap
                                 <ChevronDown className="h-5 w-5" />
                             </Link>
@@ -94,13 +110,6 @@ export function HeroSection() {
                 >
                     <div className="flex flex-col items-center gap-2">
                         <span className="text-xs text-neutral-500 uppercase tracking-widest">Scroll</span>
-                        <div className="h-12 w-6 rounded-full border border-white/20 flex justify-center pt-2">
-                            <motion.div
-                                className="h-2 w-1 bg-white/50 rounded-full"
-                                animate={{ y: [0, 16, 0] }}
-                                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                            />
-                        </div>
                     </div>
                 </motion.div>
             </div>

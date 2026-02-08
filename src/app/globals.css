@@ -130,6 +130,10 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   * {
     @apply border-border outline-ring/50;
   }
@@ -163,6 +167,17 @@
 
   .glow-purple {
     box-shadow: 0 0 40px rgba(139, 92, 246, 0.3);
+  }
+
+  /* Custom margin bottom override */
+  .mb-12 {
+    margin-bottom: 110px;
+  }
+
+  @media (max-width: 768px) {
+    .mb-12 {
+      margin-bottom: 60px;
+    }
   }
 }
 

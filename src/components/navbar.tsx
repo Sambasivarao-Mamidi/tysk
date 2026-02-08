@@ -30,6 +30,14 @@ export function Navbar() {
         return () => window.removeEventListener("scroll", handleScroll);
     }, []);
 
+    const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+        e.preventDefault();
+        const element = document.querySelector(href);
+        if (element) {
+            element.scrollIntoView({ behavior: "smooth" });
+        }
+    };
+
     return (
         <header
             className={cn(
@@ -56,6 +64,7 @@ export function Navbar() {
                         <Link
                             key={item.name}
                             href={item.href}
+                            onClick={(e) => handleNavClick(e, item.href)}
                             className="text-neutral-400 transition-colors hover:text-white text-sm font-medium"
                         >
                             {item.name}
@@ -65,7 +74,11 @@ export function Navbar() {
                         asChild
                         className="bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold shadow-lg shadow-cyan-500/25 hover:shadow-cyan-500/40 transition-all duration-300"
                     >
-                        <Link href="#contact" className="flex items-center gap-2">
+                        <Link
+                            href="#contact"
+                            onClick={(e) => handleNavClick(e, "#contact")}
+                            className="flex items-center gap-2"
+                        >
                             <Rocket className="h-4 w-4" />
                             Book Consultation
                         </Link>
@@ -86,31 +99,23 @@ export function Navbar() {
                     </SheetTrigger>
                     <SheetContent
                         side="right"
-                        className="w-full max-w-[300px] bg-neutral-950/95 backdrop-blur-xl border-l border-white/10"
+                        className="w-[320px] sm:w-[350px] bg-neutral-950/95 backdrop-blur-xl border-l border-white/10 p-0"
                     >
                         <SheetTitle className="sr-only">Navigation Menu</SheetTitle>
-                        <div className="flex flex-col gap-6 pt-8">
+                        <div className="flex flex-col gap-6 p-6 pt-8 h-full">
                             <div className="flex items-center justify-between">
                                 <span className="text-xl font-bold bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
                                     TYSK
                                 </span>
-                                <SheetClose asChild>
-                                    <Button
-                                        variant="ghost"
-                                        size="icon"
-                                        className="text-white hover:bg-white/10 min-h-[44px] min-w-[44px]"
-                                    >
-                                        <X className="h-5 w-5" />
-                                    </Button>
-                                </SheetClose>
                             </div>
 
-                            <div className="flex flex-col gap-4 pt-6">
+                            <div className="flex flex-col gap-0 pt-6">
                                 {navItems.map((item) => (
                                     <SheetClose asChild key={item.name}>
                                         <Link
                                             href={item.href}
-                                            className="text-lg font-medium text-neutral-300 hover:text-white transition-colors py-3 border-b border-white/10"
+                                            onClick={(e) => handleNavClick(e, item.href)}
+                                            className="text-base font-medium text-neutral-300 hover:text-white transition-colors px-0 py-4 border-b border-white/10"
                                         >
                                             {item.name}
                                         </Link>
@@ -121,9 +126,13 @@ export function Navbar() {
                             <SheetClose asChild>
                                 <Button
                                     asChild
-                                    className="mt-4 bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold min-h-[48px]"
+                                    className="mt-6 w-full bg-gradient-to-r from-cyan-500 to-purple-600 hover:from-cyan-400 hover:to-purple-500 text-white font-semibold min-h-[48px] text-base"
                                 >
-                                    <Link href="#contact" className="flex items-center gap-2">
+                                    <Link
+                                        href="#contact"
+                                        onClick={(e) => handleNavClick(e, "#contact")}
+                                        className="flex items-center justify-center gap-2"
+                                    >
                                         <Rocket className="h-4 w-4" />
                                         Book Consultation
                                     </Link>

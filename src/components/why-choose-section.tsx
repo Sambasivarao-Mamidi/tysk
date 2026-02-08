@@ -98,7 +98,7 @@ export function WhyChooseSection() {
                             Master
                         </span>
                     </h2>
-                    <p className="max-w-2xl mx-auto text-neutral-400 text-lg">
+                    <p className="max-w-2xl mx-auto text-neutral-400 text-base sm:text-lg px-2">
                         From cutting-edge AI to robust cloud infrastructure, we've got the expertise.
                     </p>
                 </motion.div>
