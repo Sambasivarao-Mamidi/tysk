@@ -1,6 +1,7 @@
 import { Navbar } from "@/components/navbar";
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
+import { ServicesSection } from "@/components/services-section";
 import { WhyChooseSection } from "@/components/why-choose-section";
 import { ContactSection } from "@/components/contact-section";
 import { Footer } from "@/components/footer";
@@ -16,6 +17,7 @@ export default function Home() {
       {/* Vortex background for sections after hero */}
       <VortexBackground>
         <AboutSection />
+        <ServicesSection />
         <WhyChooseSection />
         <ContactSection />
       </VortexBackground>

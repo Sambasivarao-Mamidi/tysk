@@ -2,8 +2,7 @@
 
 import * as React from "react";
 import Link from "next/link";
-import { Menu, X, Rocket } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
 import { CardNav } from "@/components/ui/card-nav";
 import DecryptedText from "@/components/ui/decrypted-text";
 import GradientText from "@/components/ui/gradient-text";
@@ -95,7 +94,7 @@ export function Navbar() {
                             showBorder={false}
                         >
                             <DecryptedText
-                                text="TYSK"
+                                text="Dev Mama"
                                 speed={100}
                                 maxIterations={20}
                                 characters="ABCD1234!?"
@@ -116,7 +115,7 @@ export function Navbar() {
                                     showBorder={false}
                                 >
                                     <DecryptedText
-                                        text="TYSK"
+                                        text="Dev Mama"
                                         speed={100}
                                         maxIterations={20}
                                         characters="ABCD1234!?"
@@ -145,7 +144,7 @@ export function Navbar() {
                                     showBorder={false}
                                 >
                                     <DecryptedText
-                                        text="TYSK"
+                                        text="Dev Mama"
                                         speed={100}
                                         maxIterations={20}
                                         characters="ABCD1234!?"
@@ -157,10 +156,10 @@ export function Navbar() {
                                 </GradientText>
                             </Link>
                         }
-                        logoAlt="TYSK"
+                        logoAlt="Dev Mama"
                         items={navItems}
                         activeHref={`#${activeId}`}
-                        baseColor="#a3a3a3" // text-neutral-400
+                        baseColor="#a3a3a3"
                         hoveredPillTextColor="#ffffff"
                         pillColor="rgba(255,255,255,0.1)"
                         pillTextColor="#ffffff"

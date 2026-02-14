@@ -1,4 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Dev Mama
+
+**Dev Mama** - Your trusted partner for production-grade solutions. We deliver cutting-edge web applications, mobile apps, AI/ML solutions, and enterprise software for students and businesses alike.
+
+## About
+
+From student projects to enterprise solutions, we build:
+- **Web Applications** - Full-stack web apps using React, Next.js, Node.js
+- **Mobile Apps** - Cross-platform mobile applications  
+- **AI/ML Solutions** - Intelligent solutions using Python, TensorFlow, OpenAI
+- **Business Automation** - Workflow automation and CRM integrations
 
 ## Getting Started
 

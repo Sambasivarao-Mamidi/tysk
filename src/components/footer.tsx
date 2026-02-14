@@ -13,21 +13,21 @@ export function Footer() {
                         className="text-2xl font-bold tracking-tight"
                     >
                         <span className="bg-gradient-to-r from-cyan-400 to-purple-500 bg-clip-text text-transparent">
-                            TYSK
+                            Dev Mama
                         </span>
                     </Link>
 
                     {/* Tagline */}
                     <p className="text-neutral-400 text-center max-w-md">
-                        Your Final Year Project Consultancy.
+                        Production-grade solutions for students and businesses.
                         <br className="hidden md:block" />
-                        Defined by Execution.
+                        From concept to deployment, we build what matters.
                     </p>
 
                     {/* Copyright */}
                     <div className="w-full pt-8 border-t border-white/10">
                         <p className="text-center text-sm text-neutral-500">
-                            © {new Date().getFullYear()} TYSK. All rights reserved.
+                            © {new Date().getFullYear()} Dev Mama. All rights reserved.
                         </p>
                     </div>
                 </div>

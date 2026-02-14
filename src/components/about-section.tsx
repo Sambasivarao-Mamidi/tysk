@@ -1,30 +1,30 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Lightbulb, Code2, FileText, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Users, Building2, Zap } from "lucide-react";
 import { BackgroundGradient } from "./ui/background-gradient";
 
 const features = [
     {
-        icon: Lightbulb,
-        title: "Strategy",
+        icon: Building2,
+        title: "Business Solutions",
         description:
-            "We help you define your project scope, choose the right technologies, and create a roadmap to success.",
-        gradient: "from-amber-500 to-orange-600",
-    },
-    {
-        icon: Code2,
-        title: "Coding",
-        description:
-            "From frontend to backend, IoT to AI/ML - our expert developers bring your vision to life with clean, scalable code.",
+            "Enterprise-grade web applications, SaaS platforms, and automation tools that scale with your business growth.",
         gradient: "from-cyan-500 to-blue-600",
     },
     {
-        icon: FileText,
-        title: "Documentation",
+        icon: Users,
+        title: "Student Projects",
         description:
-            "Comprehensive project reports, IEEE format papers, and presentation slides - all professionally crafted.",
+            "Complete project support for BTech/MTech students - from ideation to deployment with production-quality code.",
         gradient: "from-purple-500 to-pink-600",
+    },
+    {
+        icon: Zap,
+        title: "MVP Development",
+        description:
+            "Rapid prototyping and MVP development for startups. Get to market fast with scalable architecture from day one.",
+        gradient: "from-amber-500 to-orange-600",
     },
 ];
 
@@ -67,17 +67,17 @@ export function AboutSection() {
                     className="text-center mb-16"
                 >
                     <p className="mb-4 text-sm font-medium uppercase tracking-widest text-cyan-400">
-                        About Us
+                        What We Do
                     </p>
                     <h2 className="text-2xl font-bold text-white sm:text-3xl md:text-5xl mb-4">
-                        Your Final Year Project,{" "}
+                        Solutions for{" "}
                         <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                            Perfected
+                            Everyone
                         </span>
                     </h2>
-                    <p className="max-w-2xl mx-auto text-neutral-400 text-base sm:text-lg px-2">
-                        We provide end-to-end consultancy for BTech/MTech final year projects,
-                        ensuring you deliver excellence.
+                    <p className="max-w-3xl mx-auto text-neutral-400 text-base sm:text-lg px-2">
+                        Whether you are a student working on your final year project, a startup building your MVP, 
+                        or an enterprise looking for scalable solutions - we deliver production-grade results.
                     </p>
                 </motion.div>
 

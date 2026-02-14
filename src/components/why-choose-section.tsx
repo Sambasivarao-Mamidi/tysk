@@ -90,16 +90,16 @@ export function WhyChooseSection() {
                     className="text-center mb-12 px-4"
                 >
                     <p className="mb-4 text-sm font-medium uppercase tracking-widest text-purple-400">
-                        Why Choose Us
+                        Tech Stack
                     </p>
                     <h2 className="text-3xl font-bold text-white md:text-5xl mb-4">
-                        Technologies We{" "}
+                        Built with{" "}
                         <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                            Master
+                            Modern Tech
                         </span>
                     </h2>
                     <p className="max-w-2xl mx-auto text-neutral-400 text-base sm:text-lg px-2">
-                        From cutting-edge AI to robust cloud infrastructure, we've got the expertise.
+                        Production-grade stack: React, Next.js, Python, AI/ML, Cloud infrastructure, and more.
                     </p>
                 </motion.div>
 

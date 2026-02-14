@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { ArrowRight, ChevronDown } from "lucide-react";
+import { ArrowRight, ChevronDown, Sparkles, Building2, GraduationCap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { motion } from "framer-motion";
@@ -26,9 +26,10 @@ export function HeroSection() {
             {/* Gradient Orbs */}
             <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-cyan-500/20 rounded-full blur-[120px] animate-pulse" />
             <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500/20 rounded-full blur-[150px] animate-pulse" />
+            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-pink-500/10 rounded-full blur-[150px]" />
 
             {/* Content */}
-            <div className="relative z-10 mx-auto max-w-5xl px-4 py-20 text-center md:px-8">
+            <div className="relative z-10 mx-auto max-w-6xl px-4 py-20 text-center md:px-8">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -46,14 +47,14 @@ export function HeroSection() {
 
 
                     {/* Main Headline */}
-                    <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-8xl lg:text-9xl">
+                    <h1 className="mb-4 text-5xl font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-8xl">
                         <GradientText
-                            colors={["#5227FF", "#FF9FFC", "#B19EEF", "#5227FF"]} // Added loop color for smoothness
+                            colors={["#5227FF", "#FF9FFC", "#B19EEF", "#5227FF"]}
                             animationSpeed={8}
                             showBorder={false}
                         >
                             <DecryptedText
-                                text="TYSK"
+                                text="Dev Mama"
                                 animateOn="view"
                                 revealDirection="start"
                                 sequential={true}
@@ -67,29 +68,46 @@ export function HeroSection() {
                         </GradientText>
                     </h1>
 
-                    {/* Subheadline */}
-                    <div className="mb-4 text-base font-light text-neutral-400 sm:text-lg md:text-xl lg:text-2xl max-w-3xl mx-auto">
+                    {/* Tagline */}
+                    <div className="mb-6 text-xl font-light text-neutral-400 sm:text-2xl md:text-3xl lg:text-4xl max-w-4xl mx-auto">
                         <DecryptedText
-                            text="Technical Year Strategies & Knowledge"
+                            text="Building Production-Grade Solutions"
                             animateOn="view"
                             revealDirection="start"
                             sequential={true}
                             speed={50}
                             maxIterations={15}
                             characters="ABCD1234!?"
-                            className="text-neutral-400 font-medium"
+                            className="text-neutral-300 font-medium"
                             parentClassName="inline-block"
                             encryptedClassName="text-neutral-600"
                         />
                     </div>
 
-                    <p className="mb-10 text-base font-medium text-neutral-300 sm:text-lg md:text-xl lg:text-2xl">
-                        Defined by{" "}
-                        <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent">
-                            Execution
+                    {/* Description */}
+                    <p className="mb-10 text-base font-medium text-neutral-400 sm:text-lg md:text-xl max-w-3xl mx-auto leading-relaxed">
+                        From student projects to enterprise solutions, we deliver
+                        <span className="bg-gradient-to-r from-cyan-400 to-purple-400 bg-clip-text text-transparent font-semibold">
+                            scalable, production-ready applications
                         </span>
-                        .
+                        that drive real business value.
                     </p>
+
+                    {/* Stats/Value Props */}
+                    <div className="mb-10 flex flex-wrap justify-center gap-6 md:gap-10">
+                        <div className="flex items-center gap-2 text-neutral-400">
+                            <Building2 className="h-5 w-5 text-cyan-400" />
+                            <span className="text-sm md:text-base">Business Solutions</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-neutral-400">
+                            <GraduationCap className="h-5 w-5 text-purple-400" />
+                            <span className="text-sm md:text-base">Student Projects</span>
+                        </div>
+                        <div className="flex items-center gap-2 text-neutral-400">
+                            <Sparkles className="h-5 w-5 text-pink-400" />
+                            <span className="text-sm md:text-base">AI/ML & Innovation</span>
+                        </div>
+                    </div>
 
                     {/* CTA Buttons */}
                     <div className="flex flex-col gap-3 sm:flex-row sm:justify-center sm:gap-4">
@@ -103,7 +121,7 @@ export function HeroSection() {
                                 onClick={(e) => handleNavClick(e, "#contact")}
                                 className="flex items-center gap-2"
                             >
-                                Start Project
+                                Start Your Project
                                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                                 {/* Glow effect */}
                                 <span className="absolute inset-0 -z-10 bg-gradient-to-r from-cyan-500 to-purple-600 blur-xl opacity-50 group-hover:opacity-80 transition-opacity" />
@@ -121,7 +139,7 @@ export function HeroSection() {
                                 onClick={(e) => handleNavClick(e, "#about")}
                                 className="flex items-center gap-2"
                             >
-                                View Roadmap
+                                Explore Services
                                 <ChevronDown className="h-5 w-5" />
                             </Link>
                         </Button>

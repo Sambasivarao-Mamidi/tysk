@@ -2,7 +2,7 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Send, Loader2, Mail, Phone } from "lucide-react";
+import { Send, Loader2, Mail, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import StarBorder from "@/components/ui/star-border";
@@ -24,7 +24,7 @@ export function ContactSection() {
 
         // Construct WhatsApp message
         const whatsappMessage =
-            `*New Project Inquiry from TYSK Website*
+            `*New Project Inquiry from Dev Mama Website*
 
 *Name:* ${name}
 *Email:* ${email}
@@ -88,22 +88,24 @@ export function ContactSection() {
                             <Mail className="h-10 sm:h-12 w-10 sm:w-12 text-cyan-400 mb-3 sm:mb-4" />
                             <p className="text-xs sm:text-sm text-neutral-400 mb-2">Email</p>
                             <a
-                                href="mailto:contact@tysk.com"
+                                href="mailto:devmama.tech@gmail.com"
                                 className="text-white text-sm sm:text-base font-semibold hover:text-cyan-400 transition-colors text-center break-all"
                             >
-                                contact@tysk.com
+                                devmama.tech@gmail.com
                             </a>
                         </div>
 
-                        {/* Phone */}
+                        {/* WhatsApp */}
                         <div className="relative flex flex-col items-center justify-center p-4 sm:p-6 rounded-xl sm:rounded-2xl border border-purple-500/30 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 shadow-lg shadow-purple-500/10 hover:shadow-purple-500/20">
-                            <Phone className="h-10 sm:h-12 w-10 sm:w-12 text-purple-400 mb-3 sm:mb-4" />
-                            <p className="text-xs sm:text-sm text-neutral-400 mb-2">Phone</p>
+                            <MessageCircle className="h-10 sm:h-12 w-10 sm:w-12 text-purple-400 mb-3 sm:mb-4" />
+                            <p className="text-xs sm:text-sm text-neutral-400 mb-2">WhatsApp Enquiry</p>
                             <a
-                                href="tel:+1234567890"
+                                href="https://wa.me/918309382895"
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="text-white text-sm sm:text-base font-semibold hover:text-purple-400 transition-colors text-center"
                             >
-                                +1 (234) 567-8900
+                                +91 83093 82895
                             </a>
                         </div>
                     </div>

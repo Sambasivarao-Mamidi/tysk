@@ -13,23 +13,27 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  title: "TYSK | Final Year Project Consultancy",
+  title: "Dev Mama | Premium Development Agency",
   description:
-    "Technical Year Strategies & Knowledge. Your trusted partner for BTech/MTech final year projects. Strategy, Coding, and Documentation - Defined by Execution.",
+    "Dev Mama - Your trusted partner for production-grade solutions. We deliver cutting-edge web applications, mobile apps, AI/ML solutions, and enterprise software for students and businesses alike. From concept to deployment, we build what matters.",
   keywords: [
-    "final year project",
-    "BTech project",
-    "MTech project",
-    "project consultancy",
-    "engineering project",
-    "AI projects",
-    "IoT projects",
+    "web development",
+    "mobile app development",
+    "AI solutions",
+    "ML projects",
+    "software development",
+    "startup solutions",
+    "enterprise software",
+    "student projects",
+    "production grade",
+    "MVP development",
+    "custom software",
   ],
-  authors: [{ name: "TYSK" }],
+  authors: [{ name: "Dev Mama" }],
   openGraph: {
-    title: "TYSK | Final Year Project Consultancy",
+    title: "Dev Mama | Premium Development Agency",
     description:
-      "Your trusted partner for BTech/MTech final year projects. Defined by Execution.",
+      "Production-grade solutions for students and businesses. From concept to deployment, we build what matters.",
     type: "website",
   },
 };
